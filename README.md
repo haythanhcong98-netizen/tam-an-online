@@ -47,3 +47,19 @@ Chỉ đăng tải bản kinh, bản dịch, bài giảng và audio mà bạn c�
 
 ## Tuỳ chỉnh hình ảnh
 Ảnh nền hero hiện dùng ảnh từ Unsplash qua URL trong `style.css`. Khi triển khai chính thức, nên thay bằng ảnh có giấy phép phù hợp, tải về repository và dùng đường dẫn ảnh nội bộ để website không phụ thuộc nguồn ngoài.
+
+
+## Bản nâng cấp: không gian chùa 3D (MVP thử nghiệm)
+- Sân chùa 3D phong cách hoạt hình nhẹ, dựng bằng Three.js.
+- Nhập tên hiển thị và điều khiển nhân vật bằng W/A/S/D hoặc phím mũi tên; điện thoại có nút điều hướng.
+- Có thể kết nối Supabase Realtime để đồng bộ vị trí và danh sách người trong cùng một phòng.
+
+### Bật phòng nhiều người
+1. Tạo project Supabase.
+2. Lấy **Project URL** và **anon/public key** trong Project Settings → API.
+3. Mở website, vào **Chùa 3D → Kết nối phòng nhiều người**, dán hai giá trị và lưu.
+4. Mở website ở hai thiết bị/trình duyệt khác nhau, nhập tên khác nhau và vào chùa.
+
+Chỉ dùng anon/public key. Không bao giờ đưa `service_role` key lên GitHub.
+
+**Giới hạn hiện tại:** tên nhân vật hiện là tên khách theo trình duyệt, chưa gắn với Supabase Auth; tài khoản demo cũ không phải tài khoản thật. Muốn mỗi tài khoản có một nhân vật bền vững cần bước tiếp theo: tích hợp Supabase Auth và bảng `player_profiles` liên kết `auth.users`, kèm chính sách RLS. Chưa có chat, giọng nói, phòng riêng, hoạt ảnh ngồi tụng kinh hay quản trị viên. Thư viện Three.js và Supabase tải từ CDN nên cần internet.

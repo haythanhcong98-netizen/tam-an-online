@@ -19,7 +19,7 @@
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
     <nav id="mainNav">
-      <a href="#home">Trang chủ</a><a href="#library">Tủ kinh</a><a href="#audio">Nghe kinh</a>
+      <a href="#home">Trang chủ</a><a href="#chua3d">Chùa 3D</a><a href="#library">Tủ kinh</a><a href="#audio">Nghe kinh</a>
       <a href="#schedule">Lịch tụng</a><a href="#about">Giới thiệu</a>
     </nav>
     <button class="btn btn-outline account-open" id="accountOpen">Tài khoản</button>
@@ -36,6 +36,16 @@
       </div>
       <div class="hero-note"><span>❀</span> Một ngày an yên bắt đầu từ một tâm niệm lành.</div>
     </section>
+
+
+    <section class="temple3d-section" id="chua3d"><div class="section-wrap">
+      <div class="section-heading temple3d-heading"><div><div class="section-kicker">KHÔNG GIAN GẶP GỠ TRỰC TUYẾN</div><h2>Chùa 3D <span>Tâm An</span></h2><p class="muted">Bước vào sân chùa, điều khiển nhân vật và gặp những người đang cùng hiện diện.</p></div><div class="temple-online"><span class="online-dot"></span><span id="templeConnection">Chế độ xem thử</span><strong id="templeCount">0 người</strong></div></div>
+      <div class="temple-game-shell"><div class="temple-canvas-wrap"><canvas id="templeCanvas" aria-label="Không gian chùa Tâm An 3D"></canvas><div class="temple-hud"><div class="temple-hud-brand"><span>☸</span><b>TÂM AN</b><small>SÂN CHÙA</small></div><div class="temple-hud-tip" id="templeHint">Nhấn “Vào chùa” để bắt đầu</div></div><div class="temple-loading" id="templeLoading">Đang dựng không gian chùa 3D…</div></div>
+      <div class="temple-side-panel"><div class="temple-entry" id="templeEntry"><div class="temple-avatar-preview">🧘</div><h3>Gieo duyên nơi cửa Phật</h3><p>Đặt tên hiển thị để tạo nhân vật và bước vào sân chùa.</p><label for="templeNickname">Tên nhân vật</label><input id="templeNickname" maxlength="18" placeholder="Ví dụ: An Nhiên" autocomplete="nickname"><button class="btn btn-dark full" id="templeEnter">Vào chùa 3D</button><p class="temple-small">Bản thử nghiệm cho phép vào bằng tên khách. Chưa liên kết với tài khoản thành viên.</p></div>
+      <div class="temple-player-panel hidden" id="templePlayerPanel"><div class="temple-player-name"><span class="avatar-dot">●</span><div><small>NHÂN VẬT CỦA BẠN</small><strong id="templeMyName">Khách</strong></div></div><button class="btn btn-outline full" id="templeLeave">Rời sân chùa</button><div class="temple-people-title">ĐANG Ở TRONG CHÙA <span id="templePeopleCount">1</span></div><div id="templePeople" class="temple-people"></div><div class="temple-mobile-controls" aria-label="Điều khiển nhân vật"><button data-move="forward">▲</button><div><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div></div></div>
+      <div class="temple-config"><details><summary>Kết nối phòng nhiều người</summary><p>Nhập Project URL và anon/public key của Supabase để các thiết bị cùng vào một phòng trực tuyến.</p><label for="templeSupabaseUrl">Supabase Project URL</label><input id="templeSupabaseUrl" placeholder="https://xxxx.supabase.co" inputmode="url"><label for="templeSupabaseKey">Supabase anon/public key</label><input id="templeSupabaseKey" type="password" placeholder="Dán anon key tại đây"><button class="btn btn-gold full" id="templeConnect">Lưu và kết nối</button><p class="temple-small">Chỉ dùng anon/public key. Tuyệt đối không dán service_role key. Chế độ xem thử vẫn chạy nếu chưa cấu hình.</p></details></div></div></div>
+      <div class="temple-controls-note"><b>Điều khiển:</b> dùng W A S D hoặc phím mũi tên để di chuyển. Trên điện thoại, dùng các nút điều hướng. Không gian 3D đang ở giai đoạn thử nghiệm.</div>
+    </div></section>
 
     <section class="welcome section-wrap">
       <div class="section-kicker">NAM MÔ BỔN SƯ THÍCH CA MÂU NI PHẬT</div>
@@ -91,5 +101,6 @@
   <div class="modal-backdrop" id="accountModal" aria-hidden="true"><section class="modal account-modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle"><button class="modal-close" data-close="accountModal">×</button><div class="section-kicker">THÀNH VIÊN TÂM AN</div><h2 id="accountTitle">Tài khoản</h2><p class="muted">Bản xem trước lưu thông tin tài khoản trên trình duyệt hiện tại. Không dùng mật khẩu thật ở chế độ demo.</p><div class="account-tabs"><button class="active" data-tab="login">Đăng nhập</button><button data-tab="register">Đăng ký</button></div><form id="accountForm"><label>Email<input type="email" id="accountEmail" required placeholder="ban@example.com"></label><label>Mật khẩu<input type="password" id="accountPassword" required minlength="6" placeholder="Ít nhất 6 ký tự"></label><button class="btn btn-dark full" type="submit" id="accountSubmit">Đăng nhập</button></form><p id="accountMessage" class="form-message"></p><button id="logoutButton" class="text-button hidden">Đăng xuất</button></section></div>
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js"></script>
+  <script type="module" src="chua3d.js"></script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18271f">
+  <meta name="description" content="Tâm An – Không gian đọc kinh, nghe kinh và nuôi dưỡng an lành mỗi ngày.">
+  <title>Tâm An – Không gian tụng kinh online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">☸ Chúc quý vị thân tâm an lạc, tinh tấn tu học mỗi ngày ☸</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Tâm An - Trang chủ">
+      <span class="brand-mark">☸</span><span><strong>TÂM AN</strong><small>ĐƯỜNG VỀ AN NHIÊN</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Trang chủ</a><a href="#library">Tủ kinh</a><a href="#audio">Nghe kinh</a>
+      <a href="#schedule">Lịch tụng</a><a href="#about">Giới thiệu</a>
+    </nav>
+    <button class="btn btn-outline account-open" id="accountOpen">Tài khoản</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="eyebrow">KHÔNG GIAN TU TẬP TRỰC TUYẾN</span>
+        <h1>Giữ tâm thanh tịnh<br><em>Nuôi dưỡng an lành</em></h1>
+        <p>Mỗi ngày dành một chút thời gian đọc kinh, lắng nghe lời Phật dạy và vun bồi những điều thiện lành.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#library">Bắt đầu đọc kinh <span>→</span></a><a class="btn btn-glass" href="#audio">Lắng nghe kinh</a></div>
+      </div>
+      <div class="hero-note"><span>❀</span> Một ngày an yên bắt đầu từ một tâm niệm lành.</div>
+    </section>
+
+    <section class="welcome section-wrap">
+      <div class="section-kicker">NAM MÔ BỔN SƯ THÍCH CA MÂU NI PHẬT</div>
+      <h2>Chào mừng đến với <span>Tâm An</span></h2>
+      <p class="section-intro">Tạo một khoảng lặng giữa cuộc sống bộn bề. Tâm An là nơi quý vị có thể tìm đọc những bài kinh quen thuộc, nghe audio và tự nhắc mình thực hành chánh niệm mỗi ngày.</p>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-icon">📖</div><h3>Đọc kinh</h3><p>Thư viện kinh được sắp xếp rõ ràng, dễ đọc trên mọi thiết bị.</p><a href="#library">Khám phá tủ kinh →</a></article>
+        <article class="feature"><div class="feature-icon">♫</div><h3>Nghe kinh</h3><p>Lắng nghe audio trong không gian yên tĩnh, thuận tiện khi tu tập.</p><a href="#audio">Mở trình phát →</a></article>
+        <article class="feature"><div class="feature-icon">☼</div><h3>Lịch tụng kinh</h3><p>Lập lịch tu tập và ghi lại những buổi tụng kinh của bản thân.</p><a href="#schedule">Xem lịch tụng →</a></article>
+      </div>
+    </section>
+
+    <section class="library-section" id="library">
+      <div class="section-wrap">
+        <div class="section-heading"><div><div class="section-kicker">KHO TÀNG PHÁP BẢO</div><h2>Tủ kinh <span>mỗi ngày</span></h2></div><div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Tìm tên bài kinh..."></div></div>
+        <div class="category-row"><button class="category active" data-category="all">Tất cả</button><button class="category" data-category="pho-thong">Kinh phổ thông</button><button class="category" data-category="niem-phat">Niệm Phật</button><button class="category" data-category="sam-hoi">Sám hối</button></div>
+        <div class="sutra-grid" id="sutraGrid"></div>
+      </div>
+    </section>
+
+    <section class="audio-section" id="audio">
+      <div class="section-wrap audio-layout">
+        <div><div class="section-kicker">LẮNG NGHE TRONG CHÁNH NIỆM</div><h2>Âm thanh <span>an lành</span></h2><p class="muted">Quý vị có thể chọn một tệp MP3 từ thiết bị để nghe. Khi website có kho audio riêng, quản trị viên có thể bổ sung đường dẫn các bài giảng và thời kinh được phép chia sẻ.</p></div>
+        <div class="player-card">
+          <div class="player-art">☸<small>TÂM AN</small></div>
+          <div class="player-info"><span class="tiny-label">TRÌNH PHÁT AUDIO</span><h3 id="audioTitle">Chưa chọn bài nghe</h3><p id="audioStatus">Chọn tệp MP3 để bắt đầu lắng nghe</p></div>
+          <label class="btn btn-gold file-label">Chọn tệp audio<input type="file" id="audioFile" accept="audio/*"></label>
+          <audio id="audioPlayer" controls preload="none"></audio>
+          <p class="audio-tip">Audio bạn chọn được phát trực tiếp trên thiết bị, không tự động tải lên website.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule-section section-wrap" id="schedule">
+      <div class="section-heading"><div><div class="section-kicker">TINH TẤN MỖI NGÀY</div><h2>Lịch tụng <span>kinh của tôi</span></h2></div><p class="muted schedule-hint">Lịch được lưu trên trình duyệt này. Đăng nhập và đồng bộ nhiều thiết bị cần cấu hình Supabase.</p></div>
+      <form id="scheduleForm" class="schedule-form">
+        <label>Ngày tụng<input type="date" id="scheduleDate" required></label>
+        <label>Thời gian<select id="scheduleTime"><option>Sáng</option><option>Trưa</option><option>Chiều</option><option>Tối</option></select></label>
+        <label>Bài kinh<input id="scheduleTitle" placeholder="Ví dụ: Kinh Phổ Môn" required></label>
+        <button class="btn btn-dark" type="submit">＋ Thêm lịch</button>
+      </form>
+      <div id="scheduleList" class="schedule-list"></div>
+    </section>
+
+    <section class="quote-section"><div class="quote-lotus">❀</div><blockquote>“Tâm dẫn đầu các pháp, tâm làm chủ, tâm tạo.”</blockquote><p>Một lời lành, một việc thiện, một niệm bình an.</p></section>
+    <section class="about-section section-wrap" id="about"><div class="section-kicker">VỀ TÂM AN</div><h2>Cùng nhau gieo duyên <span>lành</span></h2><p>Tâm An hướng đến việc tạo dựng một không gian trực tuyến giản dị, trang nghiêm và miễn phí, giúp mọi người thuận tiện tiếp cận kinh sách và duy trì thời khóa tu tập. Nội dung kinh sách, bản dịch và audio cần được kiểm chứng nguồn, tôn trọng bản quyền và ghi rõ xuất xứ.</p></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">☸</span><span><strong>TÂM AN</strong><small>ĐƯỜNG VỀ AN NHIÊN</small></span></a><p>Nguyện đem công đức này<br>Hướng về khắp tất cả.</p><small>© <span id="year"></span> Tâm An. Phục vụ cộng đồng miễn phí.</small></footer>
+
+  <div class="modal-backdrop" id="readerModal" aria-hidden="true"><section class="modal reader-modal" role="dialog" aria-modal="true" aria-labelledby="readerTitle"><button class="modal-close" data-close="readerModal">×</button><div class="section-kicker">TỦ KINH TÂM AN</div><h2 id="readerTitle">Tên bài kinh</h2><div id="readerBody" class="reader-body"></div><div class="reader-actions"><button class="btn btn-outline" id="readerFontDown">A−</button><button class="btn btn-outline" id="readerFontUp">A＋</button><button class="btn btn-gold" id="readerPrint">In bài kinh</button></div></section></div>
+
+  <div class="modal-backdrop" id="accountModal" aria-hidden="true"><section class="modal account-modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle"><button class="modal-close" data-close="accountModal">×</button><div class="section-kicker">THÀNH VIÊN TÂM AN</div><h2 id="accountTitle">Tài khoản</h2><p class="muted">Bản xem trước lưu thông tin tài khoản trên trình duyệt hiện tại. Không dùng mật khẩu thật ở chế độ demo.</p><div class="account-tabs"><button class="active" data-tab="login">Đăng nhập</button><button data-tab="register">Đăng ký</button></div><form id="accountForm"><label>Email<input type="email" id="accountEmail" required placeholder="ban@example.com"></label><label>Mật khẩu<input type="password" id="accountPassword" required minlength="6" placeholder="Ít nhất 6 ký tự"></label><button class="btn btn-dark full" type="submit" id="accountSubmit">Đăng nhập</button></form><p id="accountMessage" class="form-message"></p><button id="logoutButton" class="text-button hidden">Đăng xuất</button></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
